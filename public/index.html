@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <canvas id="play" width="500" height="500">
+
+    </canvas>
+
+    <script>
+        var can = document.getElementById("play")
+        var pen = can.getContext("2d")
+        pen.fillRect(50, 50, 50, 50)
+    </script>
+</body>
+
+</html>
