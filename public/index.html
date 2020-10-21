@@ -7,7 +7,7 @@
     <title>Document</title>
     <style>
         canvas {
-            border: 1px solid black;
+            border: 10px solid black;
 
         }
     </style>
@@ -15,6 +15,20 @@
 </head>
 
 <body>
+    <h1>REGISTER</h1>
+    <form action="/api/register" method="post">
+        <input name="username" />
+        <input name="password" type="password" />
+        <input id="verify" type="password" />
+        <button>Register</button>
+    </form>
+    <hr>
+    <h1>Login</h1>
+    <form action="/api/login" method="post">
+        <input name="username" />
+        <input name="password" type="password" />
+        <button>Login</button>
+    </form>
     <canvas id="play" width="500" height="500">
 
     </canvas>
