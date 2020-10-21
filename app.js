@@ -4,10 +4,15 @@ const express = require('express')
 const fs = require('fs')
 const https = require('https')
 const bodyParser = require('body-parser')
+const api = require('./login/middleware/api.js')
 
 const app = express()
 
+app.use(bodyParser.urlencoded({ extended: true }))
+
 app.use(bodyParser.json())
+
+app.use("/api", api)
 
 app.use(express.static(process.env.PUBLIC_PATH))
 
