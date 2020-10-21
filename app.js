@@ -5,7 +5,7 @@ const fs = require('fs')
 const https = require('https')
 const bodyParser = require('body-parser')
 
-var app = express()
+const app = express()
 
 app.use(bodyParser.json())
 
