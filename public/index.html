@@ -4,17 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Collage</title>
+    <link href="css/styles.css" rel="stylesheet" type="text/css" />
     <style>
         canvas {
-            border: 10px solid black;
+            border: 1px solid black;
 
         }
     </style>
 
 </head>
 
-<body>
+<body id="body">
+
     <h1>REGISTER</h1>
     <form action="/api/register" method="post">
         <input name="username" />
@@ -29,15 +31,52 @@
         <input name="password" type="password" />
         <button>Login</button>
     </form>
-    <canvas id="play" width="500" height="500">
+    <h1>Collage</h1>
 
-    </canvas>
+    <div class="row">
+        <div class="column">
+            <div id="leftSide">
+                <div id="dropZone>
+                    <P>Drag your images from your file sau click <u>here</u>!</P>
+                </div>
 
+                <div id=" images_preview"></div>
+            </div>
+
+        </div>
+        <div class="column">
+            <div id="buttonsArea">
+                <select id="modelSelect" onchange="modelSelect()">
+                    <option value="">Select the pattern</option>
+                    <option value="model1">Model 1</option>
+                    <option value="model2">Model 2</option>
+                    <option value="model3">Model 3</option>
+                </select>
+
+                <div id="singleUploadSection">
+                    Click "Browse" to select a background image for your canvas!
+                    <input id="singleUpload" type="file" onchange="setBackground()" />
+                </div>
+                <a href="#" class="button" id="btn-download">Save your collage image</a>
+            </div>
+        </div>
+
+        <div id="photo">
+
+            <canvas id="background" width="600" height="600"></canvas>
+
+        </div>
+
+        <div id="images"></div>
+    </div>
     <script>
         var can = document.getElementById("play")
         var pen = can.getContext("2d")
         pen.fillRect(50, 50, 50, 50)
     </script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/fileUpload.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
