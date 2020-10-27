@@ -6,7 +6,7 @@
       <div class="column">
         <div id="leftSide">
           <div id="dropZone">
-            <P>Drag your images from your file sau click <u>here</u>!</P>
+            <P>To load pictures click <u>here</u>!</P>
           </div>
 
           <div id=" images_preview"></div>

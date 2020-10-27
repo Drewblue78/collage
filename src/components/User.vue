@@ -7,7 +7,7 @@
       <input id="verify" type="password" />
       <button>Register</button>
     </form>
-    <hr />
+
     <h1>LOGIN</h1>
     <form action="/api/login" method="post">
       <input name="username" />

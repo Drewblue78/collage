@@ -1,19 +1,20 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <User />
+    <Nav />
     <User />
     <Collage />
   </div>
 </template>
 
 <script>
+import Nav from "./components/Nav.vue";
 import User from "./components/User.vue";
 import Collage from "./components/Collage.vue";
 
 export default {
   name: "App",
   components: {
+    Nav,
     User,
     Collage,
   },
@@ -25,7 +26,6 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
   margin-top: 60px;
 }
