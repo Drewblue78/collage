@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <Nav />
+    <Navbar />
     <User />
     <Collage />
   </div>
@@ -10,6 +11,7 @@
 import Nav from "./components/Nav.vue";
 import User from "./components/User.vue";
 import Collage from "./components/Collage.vue";
+import Navbar from "./components/Navbar.vue";
 
 export default {
   name: "App",
@@ -17,6 +19,7 @@ export default {
     Nav,
     User,
     Collage,
+    Navbar,
   },
 };
 </script>

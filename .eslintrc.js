@@ -23,6 +23,10 @@ module.exports = {
     "arrow-parens": "off",
     "max-len": "off",
     "no-plusplus": "off",
-    "singlequote": "off"
+    "singlequote": "off",
+    "no-multiple-empty-lines": "off",
+    "eol-last": "off",
+    "indent": "off"
+
   },
 };

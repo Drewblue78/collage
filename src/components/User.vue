@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>REGISTER</h1>
-    <form action="/api/register" method="post">
+    <form action="http://localhost:3000/auth/register" method="post">
       <input name="username" />
       <input name="password" type="password" />
       <input id="verify" type="password" />
@@ -9,10 +9,18 @@
     </form>
 
     <h1>LOGIN</h1>
-    <form action="/api/login" method="post">
+    <form action="http://localhost:3000/auth/login" method="post">
       <input name="username" />
       <input name="password" type="password" />
       <button>Login</button>
+    </form>
+    <h1>LOGOUT</h1>
+    <form action="http://localhost:3000/auth/logout" method="post">
+      <button>Logout</button>
+    </form>
+    <h1>Check</h1>
+    <form action="http://localhost:3000/auth/check" method="get">
+      <button>Check</button>
     </form>
   </div>
 </template>
