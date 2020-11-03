@@ -1,7 +1,7 @@
 // Add the JavaScript support for drag & drop/browse upload *
 
 function makeDroppable(element, callback) {
-    var input = document.createElement('input');
+    const input = document.createElement('input');
     input.setAttribute('type', 'file');
     input.setAttribute('multiple', true);
     input.style.display = 'none';
@@ -39,7 +39,7 @@ function triggerCallback(e, callback) {
     if (!callback || typeof callback !== 'function') {
         return;
     }
-    var files;
+    let files;
     if (e.dataTransfer) {
         files = e.dataTransfer.files;
     } else if (e.target) {
@@ -52,15 +52,15 @@ function triggerCallback(e, callback) {
 //   After drag & drop upload, create image elements and add image preview 
 //   Make images draggable to canvas and register mouse & drag events
 makeDroppable(document.querySelector('#dropZone'), function (files) {
-    var output = document.querySelector('#images_preview');
+    const output = document.querySelector('#images_preview');
     output.innerHTML = '';
 
-    for (var i = 0; i < files.length; i++) {
+    for (const i = 0; i < files.length; i++) {
         if (files[i].type.indexOf('image/') === 0) {
 
-            var reader = new FileReader();
+            const reader = new FileReader();
             reader.addEventListener("load", function () {
-                var image = new Image();
+                const image = new Image();
                 image.id = Math.random().toString(36).substr(2, 9);    // Generate image ID
                 image.height = 80;
                 image.width = 80;
