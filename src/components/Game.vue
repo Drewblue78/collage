@@ -19,6 +19,7 @@ export default {
     this.downloaded = true;
     this.$nextTick(() => {
       this.gameInstance = game.launch(this.containerId);
+      this.$root.phaser = this.gameInstance;
       window.game = this.gameInstance;
       console.log("launching game");
     });
@@ -34,8 +35,5 @@ export default {
 .placeholder {
   font-size: 2rem;
   font-family: "Courier New", Courier, monospace;
-}
-.containerId {
-  border: 4px dashed #555;
 }
 </style>

@@ -1,8 +1,11 @@
 <template>
   <div id="app">
     <Nav />
-    <Collage />
-    <Game />
+    <button @click="$root.user.loggedIn = true">Fake Login</button>
+    <div v-if="$root.user.loggedIn">
+      <Collage />
+      <Game />
+    </div>
   </div>
 </template>
 
@@ -23,7 +26,7 @@ export default {
 </script>
 
 
-<style lang="scss">
+<style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -34,7 +37,7 @@ export default {
 #app.nav {
   color: blue;
 }
-#Game {
-  border: 4px dashed #555;
+canvas {
+  border: 2px solid rgb(151, 151, 151);
 }
 </style>

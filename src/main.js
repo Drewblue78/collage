@@ -5,6 +5,14 @@ import App from './App.vue';
 
 Vue.config.productionTip = false;
 
-new Vue({
+window.app = new Vue({
+  // $root
+  data: {
+    phaser: null,
+    user: {
+      loggedIn: false,
+      username: "Not logged in"
+    }
+  },
   render: (h) => h(App),
 }).$mount('#app');

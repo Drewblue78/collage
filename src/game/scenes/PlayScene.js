@@ -18,19 +18,16 @@ export default class PlayScene extends Scene {
               piece.setInteractive()
               this.input.setDraggable(piece)
               piece.scale = 300 / piece.height
-              this.input.on('pointerdown', listener)
-
             }, this)
 
             this.textures.addBase64(f.name, reader.result)
-
-
-
           }
           reader.readAsDataURL(f)
         }
       }
     })
+    // this.input.on('pointerdown', listener)
+    // }
   }
 
   create() {
@@ -40,12 +37,52 @@ export default class PlayScene extends Scene {
     piece.setInteractive()
     piece.scale = 3
     this.input.setDraggable(piece)
+    document.getElementById("game-container").addEventListener("pointerdown", (ev) =>
+      ev.preventDefault())
     this.input.on('drag', function (pointer, gameObject, dragX, dragY) {
 
       gameObject.x = dragX;
       gameObject.y = dragY;
 
+    }
+    )
+    this.input.on('pointerdown', function (pointer, box) {
+      box.setTint(0xff0000);
     });
-
   }
 }
+
+
+
+
+        // Export canvas and download as image *
+
+        //     var link = document.getElementById('btn-download');
+        // link.addEventListener('click', function (e) {
+
+        //   var canvas = document.createElement('canvas');
+        //   var context = canvas.getContext("2d");
+        //   canvas.width = 805;
+        //   canvas.height = 605;
+
+
+        //   $('#photo').children('canvas').each(function () {
+        //     var image = this;
+
+        //     context.beginPath();
+        //     context.rect((image.offsetLeft - 480), (image.offsetTop - 76), image.width,
+        //       image.height);
+        //     context.fillStyle = "white";
+        //     context.fill();
+
+        //     context.drawImage(image, (image.offsetLeft - 480 + 5), (image.offsetTop - 76 + 5),
+        //       (image.width - 10), (image.height - 10));
+        //   });
+
+        //   link.href = canvas.toDataURL();   // Save all combined images to one image
+        //   link.download = "photo.png";      // Download the image
+        // }, false);
+
+        //   }
+
+        // }
