@@ -36,4 +36,11 @@ export default {
   font-size: 2rem;
   font-family: "Courier New", Courier, monospace;
 }
+div {
+  text-align: center;
+}
+canvas {
+  border: 2px solid rgb(151, 151, 151);
+  text-align: center;
+}
 </style>

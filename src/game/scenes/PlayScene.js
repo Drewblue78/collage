@@ -26,8 +26,7 @@ export default class PlayScene extends Scene {
         }
       }
     })
-    // this.input.on('pointerdown', listener)
-    // }
+
   }
 
   create() {
@@ -37,8 +36,7 @@ export default class PlayScene extends Scene {
     piece.setInteractive()
     piece.scale = 3
     this.input.setDraggable(piece)
-    document.getElementById("game-container").addEventListener("pointerdown", (ev) =>
-      ev.preventDefault())
+
     this.input.on('drag', function (pointer, gameObject, dragX, dragY) {
 
       gameObject.x = dragX;
@@ -46,9 +44,7 @@ export default class PlayScene extends Scene {
 
     }
     )
-    this.input.on('pointerdown', function (pointer, box) {
-      box.setTint(0xff0000);
-    });
+
   }
 }
 

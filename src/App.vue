@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Nav />
-    <button @click="$root.user.loggedIn = true">Fake Login</button>
+
     <div v-if="$root.user.loggedIn">
       <Collage />
       <Game />
@@ -39,5 +39,6 @@ export default {
 }
 canvas {
   border: 2px solid rgb(151, 151, 151);
+  text-align: center;
 }
 </style>
