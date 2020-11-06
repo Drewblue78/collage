@@ -11,51 +11,59 @@
           v-model="username"
           size="sm"
           class="mr-sm-2"
-          placeholder=""
+          placeholder="username"
         ></b-form-input>
         <b-form-input
           v-model="password"
           type="password"
           size="sm"
           class="mr-sm-2"
-          placeholder=""
+          placeholder="password"
         ></b-form-input>
         <b-form-input
           v-model="verify"
           type="password"
           size="sm"
           class="mr-sm-2"
-          placeholder=""
+          placeholder="password"
         ></b-form-input>
 
         <b-button size="sm" class="my-2 my-sm-0" type="submit" @click="register"
           >Register</b-button
         >
-
+      </b-nav-form>
+      <b-nav-form v-if="!$root.user.loggedIn">
         <b-form-input
           action="/auth/login"
           method="post"
           v-model="username"
           size="sm"
           class="mr-sm-2"
-          placeholder=""
+          placeholder="username"
         ></b-form-input>
         <b-form-input
           v-model="password"
           type="password"
           size="sm"
           class="mr-sm-2"
-          placeholder=""
+          placeholder="password"
         ></b-form-input>
         <b-button size="sm" class="my-2 my-sm-0" type="submit" @click="login"
           >Login</b-button
         >
       </b-nav-form>
       <div v-else>
-        <b-button @click="logout" size="sm" class="my-2 my-sm-0" type="submit"
+        <div>
+          <p>Welcome {{ $root.user.username }}</p>
+        </div>
+        <b-button
+          text-xs-right
+          @click="logout"
+          size="sm"
+          class="my-2 my-sm-0"
+          type="submit"
           >Logout</b-button
         >
-        {{ $root.user.username }}
       </div>
     </b-navbar-nav>
   </b-collapse>
@@ -80,6 +88,7 @@ export default {
       });
       if (res.success) {
         this.$root.user.loggedIn = true;
+        this.$root.user.username = res.username;
       } else {
       }
     },
@@ -90,6 +99,7 @@ export default {
       });
       if (res.success) {
         this.$root.user.loggedIn = true;
+        this.$root.user.username = res.username;
       } else {
       }
     },
@@ -97,12 +107,13 @@ export default {
       let res = await Ajax.$post("/auth/logout");
       if (res.success) {
         this.$root.user.loggedIn = false;
+        this.$root.user.username = "not logged in";
       }
     },
   },
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+
+<style>
 </style>

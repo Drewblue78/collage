@@ -3,13 +3,19 @@
     <h1>Collage</h1>
 
     <div id="singleUploadSection">
+      <hr />
       Click "Choose File" then drag images to your canvas!
+      <br />
       <input id="singleUpload" type="file" onchange="setBackground()" />
     </div>
+    <br />
     <a href="#" class="button" @click="saveImage"
-      >Save your collage image as {{ capitalizedTitle }}</a
+      >Save your collage image as
+
+      {{ capitalizedTitle }}</a
     >
     <input v-model="title" />
+    <hr />
   </div>
 </template>
 
@@ -25,14 +31,16 @@ export default {
   },
   methods: {
     saveImage(event) {
-      var a = document.createElement("a");
+      this.$root.phaser.renderer.snapshot((img) => {
+        var a = document.createElement("a");
 
-      var img = this.$root.phaser.canvas.toDataURL("image/png");
-      a.href = img.replace("image/png", "image/octet-stream");
-      a.download = this.title;
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
+        a.href = img.replace("image/png", "image/octet-stream");
+        a.download = this.title;
+        document.body.appendChild(a);
+
+        a.click();
+        a.remove();
+      });
     },
   },
   watch: {},

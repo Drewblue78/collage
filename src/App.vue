@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <Nav />
-
     <div v-if="$root.user.loggedIn">
       <Collage />
       <Game />
@@ -25,7 +24,6 @@ export default {
 };
 </script>
 
-
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -34,9 +32,7 @@ export default {
   color: #2c3e50;
   margin-top: 20px;
 }
-#app.nav {
-  color: blue;
-}
+
 canvas {
   border: 2px solid rgb(151, 151, 151);
   text-align: center;
