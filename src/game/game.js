@@ -2,7 +2,6 @@ import Phaser from 'phaser'
 import BootScene from './scenes/BootScene'
 import PlayScene from './scenes/PlayScene'
 
-
 function launch(containerId) {
   return new Phaser.Game({
     type: Phaser.AUTO,

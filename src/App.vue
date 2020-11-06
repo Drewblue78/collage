@@ -32,7 +32,6 @@ export default {
   color: #2c3e50;
   margin-top: 20px;
 }
-
 canvas {
   border: 2px solid rgb(151, 151, 151);
   text-align: center;

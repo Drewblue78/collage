@@ -11,9 +11,6 @@ async function $post(url, dataToSend) {
   return res.data
 }
 
-
-
-
 export default {
   $get, $post
 }
